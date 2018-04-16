@@ -33,6 +33,7 @@ RUN groupadd --system zabbix && \
             openldap \
             openssl-libs \
             pcre \
+            python-pip \
             unixODBC && \
     yum clean all && \
     rm -rf /var/cache/yum/
@@ -42,6 +43,11 @@ RUN rpm -ivh http://repo.zabbix.com/zabbix/3.4/rhel/7/x86_64/zabbix-release-3.4-
     zabbix-web-mysql \
     zabbix-agent
 
+RUN pip install pyTelegramBotAPI \
+    pyopenssl \
+    ndg-httpsclient \
+    pyasn1
+    telebot
 
 
 
